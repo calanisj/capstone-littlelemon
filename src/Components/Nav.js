@@ -1,7 +1,8 @@
-import logo from "./Resources/logo.png";
+import logo from "../Assets/logo.png";
 import "./Header.css";
+import {Link} from "react-router-dom";
 
-function Header() {
+function Nav() {
     return (
         <nav className="Navigation">
             <div className="logo">
@@ -9,25 +10,25 @@ function Header() {
             </div>
             <ul className="nav-links">
                 <li>
-                    <a href="/">Home</a>
+                    <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <a href="/About">About</a>
+                    <Link to="/About">About</Link>
                 </li>
                 <li>
-                    <a href="/menu">Menu</a>
+                    <Link to="/menu">Menu</Link>
                 </li>
                 <li>
-                    <a href="/reservations">Reservations</a>
+                    <Link to="/bookings">Reservations</Link>
                 </li>
                 <li>
-                    <a href="/order">Order Online</a>
+                    <Link to="/order">Order Online</Link>
                 </li>
                 <li>
-                    <a href="/login">Login</a>
+                    <Link to="/login">Login</Link>
                 </li>
             </ul>
-            </nav>
+        </nav>
     );
 };
-export default Header;
+export default Nav;
