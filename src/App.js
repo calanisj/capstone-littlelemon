@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import './Components/Font.css'
 import Nav from './Components/Nav';
 import Home from './Components/Pages/Home';
 import AboutUs from './Components/Pages/AboutUs';

@@ -8,7 +8,7 @@ function Home() {
       <Hero/>
       <Specials/>
     </main>
-  );
+  )
 }
 
 export default Home;

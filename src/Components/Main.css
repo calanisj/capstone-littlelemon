@@ -1,3 +1,49 @@
+/*Font Family CSS*/
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Markazi Text', serif;
+}
+
+body{
+    font-family: 'Karla',sans-serif;
+}
+
+/*Header section CSS*/
+.Navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.logo-image {
+    width: 200px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin-right: 20px;
+  }
+
+  .nav-links li a {
+    font-weight: bold;
+    text-decoration: none;
+    color:#333333;
+  }
+
+  @media (max-width:768px){
+    .Navigation {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+/*Main section CSS*/
 .hero-section {
     display: flex;
     align-items: center;
@@ -77,4 +123,12 @@ button {
     .specials-cards {
         grid-template-columns: 1fr;
     }
+}
+
+/*Booking Form CSS*/
+
+.bookingForm {
+    display: grid;
+    gap: 20px;
+    max-width: 200px;
 }
