@@ -4,7 +4,7 @@ import Nav from './Components/Nav';
 import Home from './Components/Pages/Home';
 import AboutUs from './Components/Pages/AboutUs';
 import Menu from './Components/Pages/Menu';
-import BookingPage from './Components/Pages/Bookings/BookingPage';
+import BookingPage from './Components/Pages/BookingPage';
 import OrderOnline from './Components/Pages/OrderOnline';
 import Login from './Components/Pages/Login';
 import Footer from './Components/Footer';

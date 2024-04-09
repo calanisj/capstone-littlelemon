@@ -2,28 +2,30 @@ import React, {useState} from "react";
 import "../../Main.css";
 
 
-const BookingForm = () => {
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-    const [guests, setGuests] = useState("");
-    const [occasion, setOccasion] = useState("");
-    const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-    
-    const handleSubmit = e => {
-        e.preventDefault();
-        console.log(date, time, guests, occasion);
-        setDate("");
-        setTime("");
-        setGuests("");
-        setOccasion("");
-        alert("Your reservation is confirmed!");
-    }
-    
+    const BookingForm = ({
+        date,
+        setDate,
+        time,
+        setTime,
+        guests,
+        setGuests,
+        occasion,
+        setOccasion,
+        availableTimes,
+        updateTimes,
+        dispatch,
+        handleSubmit
+    }) => {
+    const handleDateChange = (e) => {
+        setDate(e.target.value);
+        dispatch({type:e.target.value});
+    };
+
     return (
         <>
         <form className="bookingForm" onSubmit={handleSubmit}>
         <label htmlfor="res-date">Choose date</label>
-        <input type="date" id="res-date" value={date} onChange={e=>setDate(e.target.value)}/>
+        <input type="date" id="res-date" value={date} onChange={handleDateChange}/>
         <label htmlFor="res-time">Choose time</label>
         <select id="res-time " value={time} onChange={e=>setTime(e.target.value)}>
             {availableTimes.map((time,index)=>(
