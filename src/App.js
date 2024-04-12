@@ -9,6 +9,7 @@ import OrderOnline from './Components/Pages/OrderOnline';
 import Login from './Components/Pages/Login';
 import Footer from './Components/Footer';
 import {Routes,Route} from 'react-router-dom';
+import ConfirmedBooking from './Components/Pages/Bookings/ConfirmedBooking';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/bookings" element={<BookingPage/>}/>
         <Route path="/orderonline" element={<OrderOnline/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/confirmed" element={<ConfirmedBooking/>}/>
       </Routes>
       <Footer/>
     </>

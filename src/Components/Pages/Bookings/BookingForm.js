@@ -12,13 +12,12 @@ import "../../Main.css";
         occasion,
         setOccasion,
         availableTimes,
-        updateTimes,
         dispatch,
         handleSubmit
     }) => {
     const handleDateChange = (e) => {
         setDate(e.target.value);
-        dispatch({type:e.target.value});
+        dispatch({date});
     };
 
     return (

@@ -1,5 +1,7 @@
-import React, { useState,useReducer } from "react";
+import React, { useState,useReducer,useEffect} from "react";
 import BookingForm from "./Bookings/BookingForm";
+
+const initializeTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
 
 function BookingPage() {
     const [date, setDate] = useState("");
@@ -7,12 +9,24 @@ function BookingPage() {
     const [guests, setGuests] = useState("");
     const [occasion, setOccasion] = useState("");
 
-    const updateTimes = (availableTimes,action) => {
-        if (action.type === "Monday") return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-        return availableTimes;
+    const updateTimes = (availableTimes, action) => {
+        const date = new Date().toLocaleDateString();
+        const day = new Date(date).getDay()
+
+        if(day >= 1 && day <= 3) {
+          // Monday to Thursday
+          return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+        } else if(day === 5 || day === 6) {
+          // Friday or Saturday
+          return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'];
+        } else if(day === 0) {
+          // Sunday
+          return [];
         }
 
-    const initializeTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+        return availableTimes;
+      }
+
     const [availableTimes,dispatch] = useReducer(updateTimes,initializeTimes);
 
     const handleSubmit = e => {
@@ -37,7 +51,6 @@ function BookingPage() {
                 occasion={occasion}
                 setOccasion={setOccasion}
                 availableTimes={availableTimes}
-                updateTimes={updateTimes}
                 dispatch={dispatch}
                 handleSubmit={handleSubmit}
             />
