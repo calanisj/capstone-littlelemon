@@ -4,10 +4,10 @@ import BookingForm from "./Bookings/BookingForm";
 const initializeTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
 
 function BookingPage() {
-    const [date, setDate] = useState("");
+    const [date, setDate] = useState(new Date());
     const [time, setTime] = useState("");
-    const [guests, setGuests] = useState("");
-    const [occasion, setOccasion] = useState("");
+    const [guests, setGuests] = useState("1");
+    const [occasion, setOccasion] = useState("no special occasion");
 
     const updateTimes = (availableTimes, action) => {
         const date = new Date().toLocaleDateString();
@@ -41,6 +41,7 @@ function BookingPage() {
 
     return (
         <div>
+            <h1>Reserve a table</h1>
             <BookingForm
                 date={date}
                 setDate={setDate}

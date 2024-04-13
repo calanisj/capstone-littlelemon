@@ -127,8 +127,46 @@ button {
 
 /*Booking Form CSS*/
 
-.bookingForm {
+.booking-form {
     display: grid;
     gap: 20px;
-    max-width: 200px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #495E57;
+}
+
+.booking-form label{
+    color: #EDEFEE;
+}
+.form-button {
+    background-color: #F4CE14; color: black;
+}
+
+/*Footer CSS*/
+
+.footer {
+    background-color: #EDEFEE;
+    align-items: center;
+    padding: 70px;
+}
+
+.logo-footer {
+    width: 100px;
+    height: auto;
+}
+
+.footer-nav li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .footer-nav a {
+    color: #333;
+    text-decoration: none;
+  }
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
 }

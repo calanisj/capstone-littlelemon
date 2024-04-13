@@ -18,3 +18,21 @@ test ('updateTimes returns correct state',()=>{
   const updateTimes = updateTimes(date);
   expect(updateTimes).toEqual(currentState.availableTimes);
 });
+
+test('submit is disabled if invalid', () => {
+  render(<BookingForm />);
+
+  fireEvent.change(screen.getByLabelText('Date'), {
+    target: { value: '' }
+  });
+
+  expect(screen.getByRole('button')).toBeDisabled();
+});
+
+test('displays error if date missing', () => {
+  render(<BookingForm />);
+
+  fireEvent.submit(screen.getByRole('form'));
+
+  expect(screen.getByText('Please enter a date')).toBeInTheDocument();
+});
