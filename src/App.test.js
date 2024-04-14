@@ -8,7 +8,6 @@ test('Renders the BookingForm heading', () => {
     expect(labelElement).toBeInTheDocument();
 });
 
-/*
 test ('initializeTimes returns correct initial state',()=>{
   const initialState = initializeTimes();
   const expectedState = {availableTimes:["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]};
@@ -38,4 +37,3 @@ test('displays error if date missing', () => {
 
   expect(screen.getByText('Please enter a date')).toBeInTheDocument();
 });
-*/
