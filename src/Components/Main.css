@@ -12,8 +12,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 70px;
-    margin-right: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .logo-image {
@@ -23,11 +23,12 @@ body{
 
 .nav-links {
     display: flex;
+    overflow-x: auto;
     list-style: none;
   }
 
   .nav-links li {
-    margin-right: 20px;
+    padding: 10px 15px;
   }
 
   .nav-links li a {
@@ -36,11 +37,19 @@ body{
     color:#333333;
   }
 
+
   @media (max-width:768px){
     .Navigation {
       flex-direction: column;
-      align-items: flex-start;
     }
+
+    .nav-links{
+        overflow: auto;
+        flex-wrap: wrap;
+    }
+    .nav-links li {
+        padding: 5px 5px;
+      }
   }
 
 /*Main section CSS*/
@@ -79,7 +88,7 @@ button {
 .specials-title{
     display: flex;
     justify-content: space-between;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 .specials-cards {
@@ -89,6 +98,8 @@ button {
 }
 
 .specials-card {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     background-color: #EDEFEE;
     border-radius: 16px;
@@ -106,7 +117,15 @@ button {
     justify-content: space-between;
 }
 .card-details {
-    margin: 15px;
+    margin: 10px;
+    overflow: hidden;
+}
+.description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 .order-delivery {
    align-self: flex-end;
@@ -120,6 +139,18 @@ button {
 }
 
 @media (max-width: 768px) {
+   .hero-section {
+    flex-direction: column;
+   }
+
+   .hero-content{
+    width: 100%;
+   }
+
+   .hero-section img {
+    display: none;
+   }
+
     .specials-cards {
         grid-template-columns: 1fr;
     }

@@ -31,7 +31,7 @@ function BookingPage() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(date, time, guests, occasion);
+        console.log({date, time, guests, occasion});
         setDate("");
         setTime("");
         setGuests("");

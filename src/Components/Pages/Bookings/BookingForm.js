@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "../../Main.css";
 
 
-    const BookingForm = ({
+    function BookingForm ({
         date,
         setDate,
         time,
@@ -14,8 +14,8 @@ import "../../Main.css";
         availableTimes,
         dispatch,
         handleSubmit
-    }) => {
-    const [isValid,setIsValid]= useState(false)
+    }) {
+
     const [dateError, setDateError] = useState('');
 
     const handleDateChange = (e) => {
@@ -27,6 +27,8 @@ import "../../Main.css";
           }
         dispatch({date});
     };
+
+    const isValid = date && time && guests>0;
 
     return (
         <>
